@@ -1,0 +1,19 @@
+
+<div class="titulo">
+<h1>Registrar Entrada</h1>
+</div>
+<hr>
+<div class="content container-sm">
+<form class="row g-3 needs-validation" novalidate [formGroup]="form" (ngSubmit)="registrarEntrada()">
+    <div class="col-md-6">
+      <label for="validationCustom01" class="form-label">Número de placa</label>
+      <input type="text" formControlName="placa" class="form-control" id="validationCustom01" value="" required>
+    </div>
+    <div class="col-12">
+      <button class="btn btn-primary" type="submit">Registrar Entrada</button>
+    </div>
+    <div class="alert alert-success" *ngIf="registerSucess" role="alert">
+      Entrada registrada correctamente.
+    </div>
+  </form>
+</div>

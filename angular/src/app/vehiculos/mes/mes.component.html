@@ -1,0 +1,21 @@
+
+
+<div class="titulo">
+    <h1>Comienza mes</h1>
+    </div>
+    <hr>
+    <div class="content container-sm col-md-6">
+        <div class="alert alert-warning" role="alert">
+            Al comenzar el mes se eliminarán las estancias registradas en los coches oficiales y se colocará
+            en cero el tiempo estacionado por los vehículos de los residentes.
+          </div>
+         
+    <form class="row g-3 needs-validation" novalidate [formGroup]="form" (ngSubmit)="comienzaMes()">
+        <div class="col-12">
+          <button class="btn btn-primary">Aceptar</button>
+        </div>
+        <div class="alert alert-success" *ngIf="registerSucess" role="alert">
+          Completado.
+        </div>
+      </form>
+    </div>

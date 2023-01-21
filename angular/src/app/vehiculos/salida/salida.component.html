@@ -1,0 +1,24 @@
+<div class="titulo">
+    <h1>Registrar Salida</h1>
+    </div>
+    <hr>
+    <div class="content container-sm">
+    <form class="row g-3 needs-validation" novalidate [formGroup]="form" (ngSubmit)="registrarSalida()">
+        <div class="col-md-6">
+          <label for="validationCustom01" class="form-label">Número de placa</label>
+          <input type="text" class="form-control" formControlName="placa" id="validationCustom01" value="" required>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+        </div>
+        <div class="col-12">
+          <button class="btn btn-primary" type="submit">Registrar Salida</button>
+        </div>
+        <div class="alert alert-success" *ngIf="registerSucess" role="alert">
+          Salida registrada correctamente.
+        </div>
+        <div class="alert alert-info" *ngIf="alertapago" role="alert">
+          Importe a pagar: ${{pago}}
+        </div>
+      </form>
+    </div>

@@ -1,0 +1,37 @@
+
+<div class="titulo">
+    <h1>Pagos de residentes</h1>
+</div>
+<hr>
+ <div class="content container-sm">
+    <form class="row g-3 needs-validation" novalidate [formGroup]="form">
+        <div class="col-md-6">
+          <label for="validationCustom01" class="form-label">Nombre del archivo</label>
+          <input type="text" class="form-control" formControlName="nombre" id="validationCustom01" value="" required>
+        </div>
+        <div class="col-12">
+          <button class="btn btn-primary" (click)="openPDF()">Generar informe</button>
+        </div>
+        <div class="alert alert-success" *ngIf="registerSucess" role="alert">
+          Archivo generado correctamente.
+        </div>
+      </form>
+  </div>
+  <div class="content2 container-sm col-md-6">
+    <table class="table" id="tablapdf">
+        <thead>
+          <tr>
+            <th scope="col">Núm. Placa</th>
+            <th scope="col">Tiempo estacionado (min.)</th>
+            <th scope="col">Cantidad a Pagar</th>
+          </tr>
+        </thead>
+        <tbody class="table-group-divider">
+          <tr *ngFor="let vehiculo of vehiculos">
+            <td scope="row">{{ vehiculo.placa }}</td>
+            <td>{{ vehiculo.total }}</td>
+            <td>{{ vehiculo.pago }}</td>
+          </tr>
+        </tbody>
+      </table>
+</div>

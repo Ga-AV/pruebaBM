@@ -1,0 +1,42 @@
+<div class="titulo">
+    <h1>Dar de alta vehículo de residente</h1>
+    </div>
+    <hr>
+    <div class="content container-sm">
+    <form class="row g-3 needs-validation" novalidate [formGroup]="form" (ngSubmit)="crear()">
+        <div class="col-md-6">
+          <label for="validationCustom01" class="form-label">Número de placa</label>
+          <input type="text" formControlName="placa" class="form-control" id="validationCustom0" value="" required>
+        </div>
+        <div class="col-12">
+          <button class="btn btn-primary" type="submit">Agregar</button>
+        </div>
+        <div class="alert alert-success" *ngIf="registerSucess" role="alert">
+          Vehículo agregado correctamente.
+        </div>
+      </form>
+    </div>
+    <div class="content2 container-sm col-md-6">
+        <table class="table ">
+            <thead>
+              <tr>
+                <th scope="col">Placa</th>
+                <th scope="col">Tipo</th>
+                <th scope="col">Entrada</th>
+                <th scope="col">Salida</th>
+                <th scope="col">Tiempo total</th>
+                <th scope="col">A pagar</th>
+              </tr>
+            </thead>
+            <tbody class="table-group-divider">
+              <tr *ngFor="let vehiculo of vehiculos">
+                <td scope="row">{{ vehiculo.placa }}</td>
+                <td>{{ vehiculo.tipo }}</td>
+                <td>{{ vehiculo.entrada }}</td>
+                <td>{{ vehiculo.salida }}</td>
+                <td>{{ vehiculo.total }}</td>
+                <td>{{ vehiculo.pago }}</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
